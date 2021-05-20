@@ -10,14 +10,18 @@
   --primary: #22e;
   --text: #222;
   --text2: #eee;
+  --background: #f6f5f5;
   /* CSS HEX */
   --space-cadet: #ff2949ff;
   --manatee: #2d99aeff;
+  --manatee2: #2d99ae30;
   --alice-blue: #edf2f4ff;
   --imperial-red: #ef233cff;
+  --imperial-red2: #ef233c30;
   --amaranth-red: #d90429ff;
 }
 body{
+background-color: var(--background);
 color: var(--text);
 font-family: 'poppins';
 }
@@ -68,7 +72,7 @@ h1,h2{
 }
 
 .input-box input{
-  border: 2px solid var(--imperial-red);
+  border: 2px solid var(--manatee);
   background-color: transparent;
   width: 45%;
   padding: 10px;
@@ -81,8 +85,8 @@ h1,h2{
 }
 .input-box button{
   color: #fffe;
-  border: 2px solid var(--imperial-red);
-  background-color: var(--imperial-red);
+  border: 2px solid var(--manatee);
+  background-color: var(--manatee);
   padding: 10px;
 }
 @media screen and (max-width: 769px) {
@@ -95,10 +99,10 @@ h1,h2{
 .cards-array-con{
 }
 .cards-array-con h4{
-    border-left: 5px solid var(--space-cadet);
+    border-left: 5px solid var(--manatee);
     padding: 10px;
-    background-color: var(--alice-blue);
-    color: var(--text);
+    background-color: var(--manatee2);
+    /* color: var(--text); */
     text-transform: uppercase;
     font-size: 16px;
 }
@@ -192,12 +196,12 @@ h1,h2{
 .boxy{
   border-radius: 10px;
   overflow: hidden;
-  box-shadow: 10px 10px 15px #5555;
+  box-shadow: 10px 10px 20px #5553;
 }
 .movie-details{
   padding: 10px;
 }
-.movie-details .genre{
+.genre{
   color: var(--text);
   background-color: var(--alice-blue);
   padding: 5px 10px;
@@ -206,7 +210,7 @@ h1,h2{
   font-size: 14px;
 }
 .movie-details h5{
-  background-color: var(--alice-blue);
+  background-color: var(--imperial-red2);
   border-left: 5px solid var(--imperial-red);
   padding: 10px;
   margin-bottom: 10px;
@@ -215,11 +219,11 @@ h1,h2{
   border-left: 5px solid var(--manatee);
   padding: 0px 0px 0px 10px;
   margin: 0px;
-  background-color: var(--alice-blue);
+  background-color: var(--manatee2);
 }
 .highlight1 li{
   list-style-type: none;
-  border-bottom: 1px solid var(--alice-blue);
+  border-bottom: 1px solid var(--manatee2);
   padding: 10px;
 }
 .highlight1 li>li{
@@ -275,4 +279,32 @@ h1,h2{
   width: 100%;
   border-radius: 10px;
   box-shadow: 5px 5px 10px #5553;
+}
+
+/* persondetails page */
+.person-dp{
+  width: 100%;
+  text-align: center;
+  margin-bottom: 10px;
+}
+.person-dp img{
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 10px 10px 20px #5555;
+}
+.person-details p{
+  text-align: justify;
+  padding-top: 20px;
+}
+@media screen and (max-width: 769px) {
+  .person-dp img{
+    width: 50%;
+  }
+}
+a{
+  color: inherit;
+}
+.socials a{
+  color: var(--manatee);
+  margin-left: 10px;
 }

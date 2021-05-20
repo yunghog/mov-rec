@@ -22,7 +22,7 @@ class CardsArray extends React.Component{
         <Row>
           <Col>
             <div className="movie-thumb-con">
-              {list.map(item=>
+              {list.length>0 && list.map(item=>
                 <a href={"#/movie/"+item.id}>
                   <div className="movie-thumb" key={item.id}>
                     <img src={"https://image.tmdb.org/t/p/w500"+item.poster_path}/>
