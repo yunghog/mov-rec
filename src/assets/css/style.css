@@ -19,6 +19,7 @@
 }
 body{
 color: var(--text);
+font-family: 'poppins';
 }
 h1,h2{
   font-family: 'abril';
@@ -181,12 +182,12 @@ h1,h2{
 .movie-poster{
   width: 100%;
   margin: 10px;
-  border-radius: 10px;
-  box-shadow: 10px 10px 15px #5555;
-  overflow: hidden;
+  text-align: center;
 }
 .movie-poster img{
+  border-radius: 10px;
   width: 100%;
+  box-shadow: 10px 10px 15px #5555;
 }
 .boxy{
   border-radius: 10px;
@@ -194,7 +195,56 @@ h1,h2{
   box-shadow: 10px 10px 15px #5555;
 }
 .movie-details{
-  
+  padding: 10px;
+}
+.movie-details .genre{
+  color: var(--text);
+  background-color: var(--alice-blue);
+  padding: 5px 10px;
+  margin-right: 10px;
+  border-radius: 20px;
+  font-size: 14px;
+}
+.movie-details h5{
+  background-color: var(--alice-blue);
+  border-left: 5px solid var(--imperial-red);
+  padding: 10px;
+  margin-bottom: 10px;
+}
+.highlight{
+  border-left: 5px solid var(--manatee);
+  padding: 0px 0px 0px 10px;
+  margin: 0px;
+  background-color: var(--alice-blue);
+}
+.highlight1 li{
+  list-style-type: none;
+  border-bottom: 1px solid var(--alice-blue);
+  padding: 10px;
+}
+.highlight1 li>li{
+  list-style-type: none;
+  border: none;
+  display: inline;
+}
+
+.movie-details p{
+  padding-top: 10px;
+  text-align: justify;
+}
+@media screen and (max-width: 769px){
+  .movie-backdrop-title{
+  display: none;
+  }
+  .movie-backdrop{
+      height: 200px;
+  }
+  .movie-backdrop-image img{
+    filter: brightness(100%);
+  }
+  .movie-poster img{
+    width: 80%;
+  }
 }
 @media screen and (min-width: 769px) {
   .movie-backdrop{
@@ -212,4 +262,17 @@ h1,h2{
   .movie-backdrop-title h2{
     font-size: 64px;
   }
+}
+.movie-cast{
+  overflow: hidden;
+  margin: 5px;
+  display: inline-block;
+  width: 120px;
+  border-radius: 10px;
+  position: relative;
+}
+.movie-cast img{
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 5px 5px 10px #5553;
 }
