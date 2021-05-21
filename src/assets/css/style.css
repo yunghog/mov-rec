@@ -226,6 +226,12 @@ h1,h2{
   border-bottom: 1px solid var(--manatee2);
   padding: 10px;
 }
+.highlight1 a{
+  background-color: var(--manatee2);
+  color: var(--manatee);
+  padding:  5px;
+  border-radius: 25px;
+}
 .highlight1 li>li{
   list-style-type: none;
   border: none;
@@ -282,6 +288,11 @@ h1,h2{
 }
 
 /* persondetails page */
+.person{
+
+}
+.person-backdrop img{
+}
 .person-dp{
   width: 100%;
   text-align: center;
@@ -307,4 +318,5 @@ a{
 .socials a{
   color: var(--manatee);
   margin-left: 10px;
+  background-color: inherit;
 }

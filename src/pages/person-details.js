@@ -52,10 +52,24 @@ class PersonDetails extends React.Component{
     const featured = this.state.featured;
     const ids = this.state.externalIds;
     console.log(ids);
-    console.log(featured);
+    console.log(featured[0]);
     return(
       <div>
-        <br/>
+        <Container fluid>
+          <Row noGutters>
+            <Col>
+              <div className="movie-backdrop person">
+                <div  className="movie-backdrop-title">
+                  <h2>{person.name}</h2>
+                </div>
+                <div className="movie-backdrop-image person-backdrop">
+                  {featured[0] && <img  src={"https://image.tmdb.org/t/p/original"+featured[0].backdrop_path}/>}
+                </div>
+              </div>
+            </Col>
+          </Row>
+        </Container>
+        <br/><br/>
         <Container>
           <Row>
             <Col>

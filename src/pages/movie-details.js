@@ -111,15 +111,15 @@ class MovieDetails extends React.Component{
                     {movie.release_date && <li>Release : {movie.release_date}</li>}
                     <li>TMDB Rating : {movie.vote_average}</li>
                     {movie.production_companies && <li>Production : { movie.production_companies.map(comp=>
-                        <li>{comp.name},</li>
+                        <li key={comp.id}>{comp.name},</li>
                       )}</li>}
                     <li style={{textTransform:"uppercase"}}>Language : {movie.original_language}</li>
-                    <li>Budget : ${movie.budget}</li>
+                    {movie.budget>0 && <li>Budget : ${movie.budget/100}</li> }
                     {movie.created_by &&
                       <li>
                         Created by :
                         {movie.created_by.map(c=>
-                          <li>{c.name},</li>
+                          <li key={c.id}>{c.name},</li>
                         )
                         }
                       </li>
