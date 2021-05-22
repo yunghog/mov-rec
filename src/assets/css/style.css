@@ -372,3 +372,51 @@ padding: 10px;
   background-color: var(--imperial-red2);
   margin: 0px 20px;
 }
+/* header component */
+.my-header{
+  position: relative;
+  width: 100%;
+  top: 0px;
+  padding: 10px;
+  background: linear-gradient(45deg, var(--space-cadet) -50%, var(--manatee) 120%);
+  z-index: 10;
+  box-shadow: 0 0 20px #5555;
+}
+.sticky{
+  position: fixed;
+  animation: headerAnim .5s;
+}
+@keyframes headerAnim {
+  0%{
+    top: -40px;
+  }
+  100%{
+    top: 0px;
+  }
+}
+.my-header h3{
+  font-family: 'abril';
+  color: var(--text2);
+}
+.my-header .btn-nav{
+  color: var(--text2);
+}
+/* ffooter component */
+.my-footer{
+  width: 100%;
+  padding: 10px;
+  background: linear-gradient(45deg, var(--space-cadet) -50%, var(--manatee) 120%);
+  z-index: 10;
+  box-shadow: 0px 0 20px #555;
+}
+.my-footer p{
+  color: var(--text2);
+  margin-bottom:  0;
+  font-size: 14px;
+}
+.my-footer a{
+  text-decoration: none;
+}
+.my-footer a:hover{
+  font-weight: bold;
+}
