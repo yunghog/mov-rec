@@ -16,6 +16,11 @@ class SearchCon extends React.Component{
   handleChange = (evt) =>{
     this.setState({[evt.target.name]:evt.target.value})
   }
+  search=()=>{
+    const url = '/#/search/'+this.state.searchQuery
+    console.log(url);
+    window.location=url;
+  }
   render(){
     return(
       <div className="search-con">
@@ -23,7 +28,7 @@ class SearchCon extends React.Component{
           <h2>Millions of movies, tv shows and people to discover!</h2>
           <div className="input-box">
             <input onChange={this.handleChange} name="searchQuery" placeholder="Search movies, shows, people..."></input>
-            <button><FaSearch/></button>
+            <button onClick={this.search}><FaSearch/></button>
           </div>
         </div>
       </div>

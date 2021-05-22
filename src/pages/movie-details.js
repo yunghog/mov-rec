@@ -4,6 +4,7 @@ import Axios from 'axios'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../assets/css/style.css'
 import CardsArray from  '../components/cards-array'
+import VideoArray from  '../components/video-array'
 import CardsArray2 from  '../components/cards-array-2'
 import {FaLink} from 'react-icons/fa'
 class MovieDetails extends React.Component{
@@ -13,7 +14,9 @@ class MovieDetails extends React.Component{
       movieId: '',
       thisMovie: '',
       similarMovies:  [],
-      cast: ''
+      cast: '',
+      videos: '',
+      reviews: ''
     }
   }
   componentDidMount(){
@@ -23,9 +26,10 @@ class MovieDetails extends React.Component{
     this.getMovieDetails(this.props.match.params.movieId);
     this.getSimilarMovies(this.props.match.params.movieId);
     this.getCredits(this.props.match.params.movieId);
+    this.getVideos(this.props.match.params.movieId);
   }
   getMovieDetails = (id) =>{
-    let url = "https://api.themoviedb.org/3/movie/"+id+"?api_key=e0027d57cef3fdd5caa5a8e762c30c62&language=en-US".replace(" ","");
+    let url = "https://api.themoviedb.org/3/movie/"+id+"?api_key=e0027d57cef3fdd5caa5a8e762c30c62&language=en-US".replaceAll(" ","");
     Axios.get(url).then(res=>{
       this.setState({
         thisMovie: res.data
@@ -69,6 +73,38 @@ class MovieDetails extends React.Component{
       })
     })
   }
+  getVideos = (id) =>{
+    let url = "https://api.themoviedb.org/3/movie/"+id+"/videos?api_key=e0027d57cef3fdd5caa5a8e762c30c62&language=en-US&page=1".replace(" ","");
+    Axios.get(url).then(res=>{
+      console.log(res.data);
+      this.setState({
+        videos: res.data,
+      })
+    }).catch(error =>{
+      url= "https://api.themoviedb.org/3/tv/"+id+"/videos?api_key=e0027d57cef3fdd5caa5a8e762c30c62&language=en-US".replace(" ","");
+      Axios.get(url).then(res=>{
+        this.setState({
+          videos: res.data
+        })
+      })
+    })
+  }
+  getReviews = (id) =>{
+    let url = "https://api.themoviedb.org/3/movie/"+id+"/reviews?api_key=e0027d57cef3fdd5caa5a8e762c30c62&language=en-US&page=1".replace(" ","");
+    Axios.get(url).then(res=>{
+      console.log(res.data);
+      this.setState({
+        reviews: res.data,
+      })
+    }).catch(error =>{
+      url= "https://api.themoviedb.org/3/tv/"+id+"/reviews?api_key=e0027d57cef3fdd5caa5a8e762c30c62&language=en-US".replace(" ","");
+      Axios.get(url).then(res=>{
+        this.setState({
+          reviews: res.data
+        })
+      })
+    })
+  }
   componentDidUpdate(){
     if(this.state.movieId != this.props.match.params.movieId){
       window.location.reload();
@@ -78,6 +114,8 @@ class MovieDetails extends React.Component{
     const movie = this.state.thisMovie;
     const similar = this.state.similarMovies;
     const cast = this.state.cast.cast;
+    const videos = this.state.videos.results;
+    const reviews = this.state.reviews.results;
     return(
       <div>
         <Container fluid>
@@ -124,7 +162,7 @@ class MovieDetails extends React.Component{
                         }
                       </li>
                     }
-                    <li><a href={movie.homepage} target="_blank"><FaLink/> Visit homepage</a></li>
+                    {movie.homepage && <li><a href={movie.homepage} target="_blank"><FaLink/> Visit homepage</a></li>}
                   </div>
               </div>
             </Col>
@@ -132,6 +170,12 @@ class MovieDetails extends React.Component{
               <div className="movie-poster">
                 <img src={"https://image.tmdb.org/t/p/original"+movie.poster_path}/>
               </div>
+            </Col>
+          </Row>
+          <br/>
+          <Row>
+            <Col>
+              {videos && videos.length>0 && <VideoArray title="Videos" list={videos}/> }
             </Col>
           </Row>
           <br/>
