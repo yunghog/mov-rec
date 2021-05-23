@@ -468,6 +468,7 @@ padding: 10px;
 }
 .splash p{
   font-size: 26px;
+  margin: 0px;
 }
 .spinner{
   animation: spin 1s infinite;
