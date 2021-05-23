@@ -1,2 +1,2 @@
-# App ro discover movies and shows
+# App to discover movies and shows
 ## Work in progress
