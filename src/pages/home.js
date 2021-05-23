@@ -47,18 +47,18 @@ class Home extends React.Component{
     })
   }
   componentDidMount(){
-    this.setState({
-      isLoading: true
-    })
     AOS.init({
       offset: 10,
       duration: 2000,
       once: true
     });
+    this.setState({
+      isLoading: true
+    })
+    setTimeout(this.setLoad,3000);
     this.getTrendingMovies();
     this.getTrendingShows();
     this.getLatestMovies();
-    setTimeout(this.setLoad,3000);
     }
   render(){
     return(
@@ -75,7 +75,7 @@ class Home extends React.Component{
           <br/>
           <CardsArray list={this.state.trendingMovies} title="Trending movies"/>
           <br/>
-          <CardsArray list={this.state.latestMovies} title="Popular Movies and  Shows"/>
+          <CardsArray list={this.state.latestMovies} title="Popular Movies and  Shows" type="movie"/>
           <br/>
           <CardsArray list={this.state.trendingShows} title="Trending shows"/>
         </div>}

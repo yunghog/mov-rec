@@ -4,7 +4,6 @@ import {Container, Row, Col} from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../assets/css/style.css'
 import { FaSearch } from "react-icons/fa";
-import hero1 from '../assets/images/hero1.jpg'
 
 class SearchCon extends React.Component{
   constructor(props){

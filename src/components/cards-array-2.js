@@ -26,6 +26,7 @@ class CardsArray2 extends React.Component{
                   <div className="movie-cast" key={item.id}>
                     <img src={"https://image.tmdb.org/t/p/w500"+item.profile_path}/>
                     <p>{item.name}</p>
+                    <p className="char-name">{item.character}</p>
                 </div>
                 </a>
               )}

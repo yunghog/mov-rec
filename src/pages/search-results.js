@@ -83,7 +83,7 @@ class SearchResults extends React.Component{
               if(r.media_type=="tv"){
                 dp="https://image.tmdb.org/t/p/w500"+r.poster_path
                 title=r.name
-                link="/#/movie/"+r.id
+                link="/#/show/"+r.id
               }
               return(
                 <Col  md={2} xs={6}>

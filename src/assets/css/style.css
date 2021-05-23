@@ -141,6 +141,7 @@ h1,h2{
   font-weight: bold;
   margin-bottom: 0px;
 }
+
 .movie-thumb .rating{
   padding: 2px;
   font-size: 12px;
@@ -164,7 +165,7 @@ h1,h2{
   height: 40vh;
 }
 .movie-backdrop-image{
-  min-width: 100%;
+  width: 100%;
   height: 40vh;
   position: absolute;
   top: 0px;
@@ -292,7 +293,14 @@ h1,h2{
   border-radius: 10px;
   box-shadow: 5px 5px 10px #5553;
 }
-
+.movie-cast p{
+  font-size: 14px;
+  margin-bottom: 0px;
+}
+.movie-cast .char-name{
+  margin-top: -5px;
+  font-size: 10px;
+}
 /* persondetails page */
 .person{
 
@@ -479,5 +487,36 @@ padding: 10px;
   }
   100%{
     transform: rotate(360deg);
+  }
+}
+
+/* show details page */
+.show-seasons-con{
+ border-bottom: 1px solid var(--manatee2);
+ padding: 10px;
+}
+.show-seasons-details{
+  padding: 20px;
+}
+.show-seasons-img{
+  text-align: center;
+}
+.show-seasons-img img{
+  width: 100%;
+  margin: 10px;
+  border-radius: 10px;
+  box-shadow: 10px 10px 20px #5555;
+}
+.show-seasons-con p{
+  text-align: justify;
+  margin-bottom: 5px;
+}
+.show-seasons-con span{
+  font-size: 12px;
+  opacity: .7;
+}
+@media screen and (max-width: 769px) {
+  .show-seasons-con img{
+    width: 60%;
   }
 }
