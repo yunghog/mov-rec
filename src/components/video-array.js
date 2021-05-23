@@ -24,7 +24,7 @@ class VideoArray extends React.Component{
             <div className="movie-thumb-con">
               {list.length>0 && list.map(item=>
                   <div className="video-thumb" key={item.id}>
-                    <iframe width="560" height="315" src={"https://www.youtube.com/embed/"+item.key} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" Allowfullscreen></iframe>
+                    <iframe width="560" height="315" src={"https://www.youtube.com/embed/"+item.key} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
                     <p>{item.name}</p>
                 </div>
               )}
