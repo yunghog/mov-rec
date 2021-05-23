@@ -8,6 +8,7 @@ import SearchResults  from  './pages/search-results'
 function App() {
   return (
     <div>
+    <div className="content-wrap">
     <Header/>
     <Router>
       <Route exact path="/" component={Home}/>
@@ -15,6 +16,7 @@ function App() {
       <Route path="/people/:peopleId" component={PersonDetails}/>
       <Route path="/search/:query" component={SearchResults}/>
     </Router>
+    </div>
     <Footer/>
     </div>
   );

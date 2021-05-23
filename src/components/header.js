@@ -16,6 +16,17 @@ class Header extends React.Component{
         topOffset: window.scrollY
       })
     })
+    this.isHome()
+  }
+  goBack=()=>{
+    if(!this.isHome())
+      window.history.back()
+  }
+  isHome=()=>{
+    const loc = window.location.hash
+    if(loc=="#/")
+      return true
+    return false
   }
   render(){
     var topOffset = this.state.topOffset
@@ -24,7 +35,7 @@ class Header extends React.Component{
           <Container fluid>
             <Row noGutters>
               <Col xs={2} className="text-left">
-                <button className="btn btn-nav"><FaArrowLeft size="20"/></button>
+                <button className="btn btn-nav" onClick={this.goBack} ><FaArrowLeft size="20"/></button>
               </Col>
               <Col xs={8} className="text-center">
                 <h3>TrapTV</h3>
