@@ -6,6 +6,7 @@ import MovieDetails  from  './pages/movie-details'
 import ShowDetails  from  './pages/show-details'
 import PersonDetails  from  './pages/person-details'
 import SearchResults  from  './pages/search-results'
+import About from './pages/about'
 function App() {
   return (
     <div>
@@ -13,6 +14,7 @@ function App() {
     <Header/>
     <Router>
       <Route exact path="/" component={Home}/>
+      <Route exact path="/about" component={About}/>
       <Route path="/movie/:movieId" component={MovieDetails}/>
       <Route path="/show/:showId" component={ShowDetails}/>
       <Route path="/people/:peopleId" component={PersonDetails}/>
