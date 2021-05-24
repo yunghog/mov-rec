@@ -95,6 +95,9 @@ class Header extends React.Component{
                 <button  class={this.state.curTheme==0?"btn-ts n":"btn-ts"} onClick={(e)=>{this.toggleTheme("d")}}><FaMoon/></button>
                 <button  class={this.state.curTheme==1?"btn-ts n":"btn-ts"} onClick={(e)=>{this.toggleTheme("l")}}><FaSun/></button>
               </li>
+              <li>
+                <button>Share</button>
+              </li>
             </div>
           </div>
         </header>
