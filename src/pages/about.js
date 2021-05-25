@@ -44,7 +44,7 @@ function About(){
                 <li>Filter movies and TV shows by genres, year and rating</li>
                 <li>Get personal movie recommendation based on your taste</li>
               </ul>
-              <div className="text-center">
+              <div className="">
                 <a className="tmdb-link2" href="https://github.com/yunghog/mov-rec" target="_blank" rel="noopner">View Source</a>
               </div>
             </div>
@@ -74,7 +74,7 @@ function About(){
                   <li>Our community is second to none. Between our staff and community moderators, we're always here to help. We're passionate about making sure your experience on TMDb is nothing short of amazing.</li>
                   <li>Trusted platform. Every single day our service is used by millions of people while we process over 3 billion requests. We've proven for years that this is a service that can be trusted and relied on.</li>
                   </ul>
-                  <div className="text-center">
+                  <div className="">
                     <a className="tmdb-link" href="https://www.themoviedb.org/about" target="_blank" rel="noopner">Home page</a>
                     <a  className="tmdb-link" href="https://developers.themoviedb.org/3" target="_blank" rel="noopner">API Documentation</a>
                   </div>

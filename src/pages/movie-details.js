@@ -106,9 +106,11 @@ class MovieDetails extends React.Component{
               <div className="movie-details">
                 <h1>{movie.title}</h1>
                 {movie.tagline && <h5>{movie.tagline}</h5>}
-                {movie.genres && movie.genres.map(i=>
-                  <a className="genre"  key={i.id}>{i.name}</a>
-                )}
+                <div style={{width:'100%', overflow:'hidden'}}>
+                  {movie.genres && movie.genres.map(i=>
+                    <a className="genre"  key={i.id}>{i.name}</a>
+                  )}
+                </div>
                 <p>{movie.overview}</p>
                   <div className="highlight1">
                     <li>Release : {movie.release_date}</li>

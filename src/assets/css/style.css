@@ -347,6 +347,7 @@ a{
 
 /* video array */
 .video-thumb{
+  max-width: 560px;
   overflow: hidden;
   margin: 5px;
   display: inline-block;
@@ -694,15 +695,15 @@ padding: 10px;
   }
 }
 .tmdb-link{
-  background-color: #0a1526;
-  color: var(--manatee);
+  background-color: var(--manatee);
+  color: var(--text2);
   padding: 10px;
   margin: 10px;
   border-radius: 10px;
 }
 .tmdb-link2{
-  background-color: var(--space-cadet);
-  color: var(--text);
+  background: linear-gradient(45deg, var(--space-cadet) -50%, var(--manatee) 120%);
+  color: var(--text2);
   padding: 10px;
   margin: 10px;
   border-radius: 10px;
