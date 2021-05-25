@@ -92,7 +92,8 @@ class ShowDetails extends React.Component{
                   {movie.name && <h2>{movie.name}</h2>}
                 </div>
                 <div className="movie-backdrop-image">
-                  <img  src={"https://image.tmdb.org/t/p/original"+movie.backdrop_path}/>
+                  {movie.backdrop_path && <img  src={"https://image.tmdb.org/t/p/original"+movie.backdrop_path}/>}
+                  {movie.backdrop_path==null && <img src={defaultBackdrop} /> }
                 </div>
               </div>
             </Col>
