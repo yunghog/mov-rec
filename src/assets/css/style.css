@@ -409,6 +409,7 @@ padding: 10px;
 }
 .my-header .header-logo img{
   width: 100px;
+  margin-bottom: -20px;
 }
 .sticky{
   position: fixed;
@@ -495,6 +496,59 @@ padding: 10px;
 .n{
   color: var(--text2) !important;
   background-color: var(--imperial-red);
+}
+.header-share-con{
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  top: 0px;
+  display: none;
+  opacity: 0;
+  visibility: hidden;
+  justify-content: center;
+  align-items: center;
+  z-index: 20;
+  background-color: #5559;
+  transition: 1s;
+}
+.header-share-con-show{
+  opacity: 1;
+  visibility: visible;
+  display: flex;
+}
+.share-menu{
+  background-color: var(--background);
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 10px 10px 20px #5555;
+  animation: pad10 1s;
+  overflow: hidden;
+  position: relative;
+}
+@keyframes pad10 {
+  from{
+    margin-top: 50px;
+  }
+  to{
+    margin-top: 0px;
+  }
+}
+.share-menu li{
+  list-style-type: none;
+  /* font-size: 24px; */
+  padding: 5px 0px;
+  border-bottom: 1px solid var(--manatee2);
+}
+.share-menu .btn-close{
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  background-color: var(--imperial-red2);
+  color: var(--imperial-red);
+}
+.share-menu li a:hover{
+  color: var(--manatee);
+  text-decoration: none;
 }
 /* ffooter component */
 .my-footer{

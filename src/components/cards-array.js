@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import '../assets/css/style.css'
 import AOS from 'aos'
 import { FaSearch } from "react-icons/fa";
-
+import defaultDp from  '../assets/images/default-profile.jpg'
 class CardsArray extends React.Component{
   constructor(props){
     super(props)
@@ -48,7 +48,8 @@ class CardsArray extends React.Component{
 
                 return(<a href={link} key={item.id}>
                   <div className="movie-thumb">
-                    <img src={"https://image.tmdb.org/t/p/original"+item.poster_path}/>
+                    {item.poster_path!=null && <img src={"https://image.tmdb.org/t/p/original"+item.poster_path}/>}
+                    {item.poster_path===null && <img src={defaultDp}/>}
                     <span className="rating">{item.vote_average}</span>
                     <p>{item.title}</p>
                   </div>

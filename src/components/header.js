@@ -3,14 +3,15 @@ import {Container, Row, Col} from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../assets/css/style.css'
 import logo from  '../assets/images/traptv-logo.png'
-import {FaBars,FaArrowLeft,FaMoon,FaSun,FaShare} from 'react-icons/fa'
+import {FaBars,FaArrowLeft,FaMoon,FaSun,FaShare,FaWhatsapp,FaFacebook,FaClipboard} from 'react-icons/fa'
 class Header extends React.Component{
   constructor(props){
     super(props)
     this.state={
       topOffset: 0,
       menuIsOpen: false,
-      curTheme: 1
+      curTheme: 1,
+      shareConIsOpen: false
     }
   }
   componentDidMount(){
@@ -44,6 +45,20 @@ class Header extends React.Component{
         })
       }
   }
+  toggleShare = () =>{
+      const i = this.state.shareConIsOpen
+      if(i){
+        this.setState({
+          shareConIsOpen: false,
+          menuIsOpen: false
+        })
+      }
+      else{
+        this.setState({
+          shareConIsOpen: true
+        })
+      }
+  }
   toggleTheme=(x)=>{
     if(x=='d'){
       this.setState({
@@ -58,6 +73,18 @@ class Header extends React.Component{
       document.body.setAttribute('data-theme','')
     }
     setTimeout(this.toggleMenu,1000);
+  }
+  copyToClip = () => {
+    var urlx = window.location
+    var textField = document.createElement('textarea')
+    textField.innerText = String(urlx)
+    document.body.appendChild(textField)
+    textField.select()
+    document.execCommand('copy')
+    textField.remove()
+    // navigator.clipboard.writeText(String(urlx).replace('#','%23'))
+    window.alert('Text copied : '+urlx)
+    this.toggleShare()
   }
   render(){
     var topOffset = this.state.topOffset
@@ -97,10 +124,28 @@ class Header extends React.Component{
                 <button  class={this.state.curTheme==1?"btn-ts n":"btn-ts"} onClick={(e)=>{this.toggleTheme("l")}}><FaSun/></button>
               </li>
               <li style={{textAlign:'center'}}>
-                <button className="btn btn-1 btn-share">Share <FaShare/> </button>
+                <button className="btn btn-1 btn-share" onClick={this.toggleShare}>Share <FaShare/> </button>
               </li>
             </div>
           </div>
+          <div  className={this.state.shareConIsOpen?"header-share-con header-share-con-show":"header-share-con"}>
+            <div className="share-menu">
+              <button className="btn btn-close" onClick={this.toggleShare}>X</button>
+              <li style={{backgroundColor:'var(--manatee2)', margin:"-10px",marginBottom:'5px',textAlign:"center"}}>
+                Share
+              </li>
+              <li>
+                <a href={("https://api.whatsapp.com/send?text="+window.location).replaceAll('#','%23')} target="_blank"><FaWhatsapp/> Share on Whatsapp</a>
+              </li>
+              <li>
+                <a href={("https://www.facebook.com/sharer/sharer.php?u="+window.location).replaceAll('#','%23')} target="_blank"><FaFacebook/> Share on Facebook</a>
+              </li>
+              <li>
+                <button className="btn tmdb-link" onClick={this.copyToClip}><FaClipboard/> Copy link to Clipboard</button>
+              </li>
+            </div>
+          </div>
+
         </header>
     )
   }

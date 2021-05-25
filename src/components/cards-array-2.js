@@ -2,6 +2,7 @@ import React from 'react'
 import {Container, Row, Col} from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../assets/css/style.css'
+import defaultDp from  '../assets/images/default-profile.jpg'
 
 class CardsArray2 extends React.Component{
   constructor(props){
@@ -24,7 +25,8 @@ class CardsArray2 extends React.Component{
               {list && list.map(item=>
                 <a href={"#/people/"+item.id}>
                   <div className="movie-cast" key={item.id}>
-                    <img src={"https://image.tmdb.org/t/p/w500"+item.profile_path}/>
+                    {item.profile_path!=null && <img src={"https://image.tmdb.org/t/p/w500"+item.profile_path}/>}
+                    {item.profile_path==null && <img src={defaultDp}/>}
                     <p>{item.name}</p>
                     <p className="char-name">{item.character}</p>
                 </div>
