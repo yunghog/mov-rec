@@ -57,7 +57,7 @@ class Header extends React.Component{
       })
       document.body.setAttribute('data-theme','')
     }
-    this.toggleMenu()
+    setTimeout(this.toggleMenu,1000);
   }
   render(){
     var topOffset = this.state.topOffset
