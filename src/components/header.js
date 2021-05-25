@@ -2,7 +2,8 @@ import React from 'react'
 import {Container, Row, Col} from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../assets/css/style.css'
-import {FaBars,FaArrowLeft,FaMoon,FaSun} from 'react-icons/fa'
+import logo from  '../assets/images/traptv-logo.png'
+import {FaBars,FaArrowLeft,FaMoon,FaSun,FaShare} from 'react-icons/fa'
 class Header extends React.Component{
   constructor(props){
     super(props)
@@ -56,6 +57,7 @@ class Header extends React.Component{
       })
       document.body.setAttribute('data-theme','')
     }
+    this.toggleMenu()
   }
   render(){
     var topOffset = this.state.topOffset
@@ -67,7 +69,9 @@ class Header extends React.Component{
                 <button className="btn btn-nav" onClick={this.goBack} ><FaArrowLeft size="20"/></button>
               </Col>
               <Col xs={8} className="text-center">
-                <h3>TrapTV</h3>
+                <div className="header-logo">
+                  <img src={logo}/>
+                </div>
               </Col>
               <Col xs={2} className="text-right">
                 <button className="btn btn-nav" onClick={this.toggleMenu}><FaBars size="20"/></button>
@@ -87,16 +91,13 @@ class Header extends React.Component{
                 <a href="/#/about" onClick={this.toggleMenu}>About</a>
               </li>
               <li>
-                <a href="/#/thetmdb" onClick={this.toggleMenu}>TMDB</a>
-              </li>
-              <li>
                 <a href="/#/thetmdb" onClick={this.toggleMenu}>Switch Theme</a>
                 <br/>
                 <button  class={this.state.curTheme==0?"btn-ts n":"btn-ts"} onClick={(e)=>{this.toggleTheme("d")}}><FaMoon/></button>
                 <button  class={this.state.curTheme==1?"btn-ts n":"btn-ts"} onClick={(e)=>{this.toggleTheme("l")}}><FaSun/></button>
               </li>
-              <li>
-                <button>Share</button>
+              <li style={{textAlign:'center'}}>
+                <button className="btn btn-1 btn-share">Share <FaShare/> </button>
               </li>
             </div>
           </div>

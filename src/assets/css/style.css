@@ -53,7 +53,11 @@ h1,h2{
 }
 .btn-1{
   color: var(--text2);
-  background-color: var(--primary);
+  background-color: var(--manatee);
+}
+.btn-1:hover{
+  color: var(--text2);
+  box-shadow: 0 0 10px  var(--manatee);
 }
 
 
@@ -397,10 +401,13 @@ padding: 10px;
   position: relative;
   width: 100%;
   top: 0px;
-  padding: 10px;
+  padding: 5px;
   background: linear-gradient(45deg, var(--space-cadet) -50%, var(--manatee) 120%);
   z-index: 10;
   box-shadow: 0 0 20px #5555;
+}
+.my-header .header-logo img{
+  width: 100px;
 }
 .sticky{
   position: fixed;
@@ -640,4 +647,63 @@ padding: 10px;
 .det .socials a:hover{
   color: var(--manatee);
   background-color: var(--manatee2);
+}
+.fancy-highlight{
+  background-color: var(--manatee2);
+  padding: 20px 0px;
+  border-radius: 0 0 10px 10px;
+}
+.fancy-highlight2{
+  background-color: var(--imperial-red2);
+  padding: 20px 0px;
+  border-radius: 0 0 10px 10px;
+}
+.fancy-highlight li{
+  padding: 10px;
+  font-size: 20px;
+  margin-bottom: 20px;
+  list-style-type: none;
+  margin-left: -2rem;
+  color: var(--manatee);
+  text-align: justify;
+}
+.fancy-highlight2 li{
+  color: var(--space-cadet);
+}
+.tmdb-logo{
+  border-radius: 10px 10px 0 0 ;
+  text-align: center;
+  background-color: var(--manatee);
+  padding: 20px;
+}
+.traptv-logo{
+  border-radius: 10px 10px 0 0 ;
+  text-align: center;
+  background: linear-gradient(45deg, var(--space-cadet) -50%, var(--manatee) 120%);
+  padding: 20px;
+}
+.tmdb-logo img{
+  width: 400px;
+}
+.traptv-logo img{
+  width: 300px;
+}
+@media screen and (max-width: 768px) {
+  .tmdb-logo img{
+    width: 100%;
+  }
+}
+.tmdb-link{
+  background-color: #0a1526;
+  color: var(--manatee);
+  padding: 10px;
+  margin: 10px;
+  border-radius: 10px;
+}
+.tmdb-link2{
+  background-color: var(--space-cadet);
+  color: var(--text);
+  padding: 10px;
+  margin: 10px;
+  border-radius: 10px;
 }
