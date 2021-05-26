@@ -135,10 +135,10 @@ class Header extends React.Component{
                 Share
               </li>
               <li>
-                <a href={("https://api.whatsapp.com/send?text="+window.location).replaceAll('#','%23')} target="_blank"><FaWhatsapp/> Share on Whatsapp</a>
+                <a href={("https://api.whatsapp.com/send?text="+window.location).replaceAll('#','%23')} target="_blank" rel="noreferrer"><FaWhatsapp/> Share on Whatsapp</a>
               </li>
               <li>
-                <a href={("https://www.facebook.com/sharer/sharer.php?u="+window.location).replaceAll('#','%23')} target="_blank"><FaFacebook/> Share on Facebook</a>
+                <a href={("https://www.facebook.com/sharer/sharer.php?u="+window.location).replaceAll('#','%23')} target="_blank" rel="noreferrer"><FaFacebook/> Share on Facebook</a>
               </li>
               <li>
                 <button className="btn tmdb-link" onClick={this.copyToClip}><FaClipboard/> Copy link to Clipboard</button>

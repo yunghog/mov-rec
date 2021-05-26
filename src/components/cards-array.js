@@ -2,20 +2,12 @@ import React from 'react'
 import {Container, Row, Col} from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../assets/css/style.css'
-import AOS from 'aos'
-import { FaSearch } from "react-icons/fa";
 import defaultDp from  '../assets/images/default-profile.jpg'
 class CardsArray extends React.Component{
   constructor(props){
     super(props)
     this.state={
     }
-  }
-  componentDidMount(){
-    AOS.init({
-      once:true,
-      duration: 2000
-    })
   }
   render(){
     const list = this.props.list;
@@ -33,23 +25,23 @@ class CardsArray extends React.Component{
             <div className="movie-thumb-con" data-aos="fade">
               {list.length>0 && list.map(function(item){
                   let link = ''
-                  if(item.media_type=="movie"){
+                  if(item.media_type==="movie"){
                     link="#/movie/"+item.id
                   }
-                  if(item.media_type=="tv"){
+                  if(item.media_type==="tv"){
                     link="#/show/"+item.id
                   }
-                  if(media_type=="movie"){
+                  if(media_type==="movie"){
                     link="#/movie/"+item.id
                   }
-                  else if(media_type=="show"){
+                  else if(media_type==="show"){
                     link="#/show/"+item.id
                   }
 
                 return(<a href={link} key={item.id}>
                   <div className="movie-thumb">
-                    {item.poster_path!=null && <img src={"https://image.tmdb.org/t/p/original"+item.poster_path}/>}
-                    {item.poster_path===null && <img src={defaultDp}/>}
+                    {item.poster_path!==null && <img src={"https://image.tmdb.org/t/p/original"+item.poster_path} alt={item.title}/>}
+                    {item.poster_path===null && <img src={defaultDp} alt={item.title}/>}
                     <span className="rating">{item.vote_average}</span>
                     <p>{item.title}</p>
                   </div>

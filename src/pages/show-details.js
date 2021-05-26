@@ -7,6 +7,8 @@ import CardsArray from  '../components/cards-array'
 import VideoArray from  '../components/video-array'
 import CardsArray2 from  '../components/cards-array-2'
 import {FaLink} from 'react-icons/fa'
+import defaultBackdrop  from  '../assets/images/default-backdrop.jpg'
+
 class ShowDetails extends React.Component{
   constructor(props){
     super(props)
@@ -71,7 +73,7 @@ class ShowDetails extends React.Component{
     })
   }
   componentDidUpdate(){
-    if(this.state.movieId!=this.props.match.params.showId){
+    if(this.state.movieId!==this.props.match.params.showId){
       window.location.reload()
     }
   }
@@ -80,7 +82,6 @@ class ShowDetails extends React.Component{
     const similar = this.state.similarMovies;
     const cast = this.state.cast.cast;
     const videos = this.state.videos.results;
-    const reviews = this.state.reviews.results;
     return(
       <div>
         <Container fluid>
@@ -92,8 +93,8 @@ class ShowDetails extends React.Component{
                   {movie.name && <h2>{movie.name}</h2>}
                 </div>
                 <div className="movie-backdrop-image">
-                  {movie.backdrop_path && <img  src={"https://image.tmdb.org/t/p/original"+movie.backdrop_path}/>}
-                  {movie.backdrop_path==null && <img src={defaultBackdrop} /> }
+                  {movie.backdrop_path && <img  src={"https://image.tmdb.org/t/p/original"+movie.backdrop_path} alt="TrapTV"/>}
+                  {movie.backdrop_path==null && <img src={defaultBackdrop} alt="TrapTV" /> }
                 </div>
               </div>
             </Col>
@@ -108,7 +109,7 @@ class ShowDetails extends React.Component{
                 {movie.name && <h1>{movie.name}</h1>}
                 {movie.tagline && <h5>{movie.tagline}</h5>}
                 {movie.genres && movie.genres.map(i=>
-                  <a className="genre"  key={i.id}>{i.name}</a>
+                  <a className="genre" href="#"  key={i.id}>{i.name}</a>
                 )}
                 <p>{movie.overview}</p>
                   <div className="highlight1">
@@ -128,13 +129,13 @@ class ShowDetails extends React.Component{
                         }
                       </li>
                     }
-                    {movie.homepage && <li><a href={movie.homepage} target="_blank"><FaLink/> Visit homepage</a></li>}
+                    {movie.homepage && <li><a href={movie.homepage} target="_blank"  rel="noreferrer"><FaLink/> Visit homepage</a></li>}
                   </div>
               </div>
             </Col>
             <Col md={3}>
               <div className="movie-poster">
-                <img src={"https://image.tmdb.org/t/p/original"+movie.poster_path}/>
+                <img src={"https://image.tmdb.org/t/p/original"+movie.poster_path} alt="TrapTV"/>
               </div>
             </Col>
           </Row>
@@ -151,7 +152,7 @@ class ShowDetails extends React.Component{
             <Row className="show-seasons-con" key={s.id}>
               <Col md={2}>
                 <div className="show-seasons-img">
-                  <img src={"https://image.tmdb.org/t/p/original"+s.poster_path}/>
+                  <img src={"https://image.tmdb.org/t/p/original"+s.poster_path} alt="TrapTV"/>
                 </div>
               </Col>
               <Col md={9}>

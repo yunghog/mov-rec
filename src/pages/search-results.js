@@ -5,9 +5,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import '../assets/css/style.css'
 import {FaArrowLeft,FaArrowRight} from 'react-icons/fa'
 import SearchCon from  '../components/search-con'
-import CardsArray from  '../components/cards-array'
-import VideoArray from  '../components/video-array'
-import CardsArray2 from  '../components/cards-array-2'
 class SearchResults extends React.Component{
   constructor(props){
     super(props)
@@ -24,7 +21,7 @@ class SearchResults extends React.Component{
     this.execQuery(1);
   }
   componentDidUpdate(){
-    if(this.props.match.params.query!=this.state.query){
+    if(this.props.match.params.query!==this.state.query){
       window.location.reload();
     }
   }
@@ -70,17 +67,17 @@ class SearchResults extends React.Component{
               let link = ''
               let dp = ''
               let title = ''
-              if(r.media_type=="person"){
+              if(r.media_type==="person"){
                 dp="https://image.tmdb.org/t/p/w500"+r.profile_path
                 title=r.name
                 link="/#/people/"+r.id
               }
-              if(r.media_type=="movie"){
+              if(r.media_type==="movie"){
                 dp="https://image.tmdb.org/t/p/w500"+r.poster_path
                 title=r.title
                 link="/#/movie/"+r.id
               }
-              if(r.media_type=="tv"){
+              if(r.media_type==="tv"){
                 dp="https://image.tmdb.org/t/p/w500"+r.poster_path
                 title=r.name
                 link="/#/show/"+r.id
@@ -89,7 +86,7 @@ class SearchResults extends React.Component{
                 <Col  md={2} xs={6}>
                   <a href={link} style={{textDecoration:'none'}}>
                     <div className="search-results-thumb">
-                      <img src={dp}/>
+                      <img src={dp} alt="TrapTV"/>
                       <p>{r.media_type}</p>
                       <h5>{title}</h5>
                     </div>
@@ -105,7 +102,7 @@ class SearchResults extends React.Component{
               <div className="btn-grp-nav">
                 <button className="btn btn-nav" onClick={(e)=>this.execQuery(curPage-1,e)} disabled={curPage<2}><FaArrowLeft/></button>
                 Page {curPage} of {pages}
-                <button className="btn btn-nav" onClick={(e)=>this.execQuery(curPage+1,e)} disabled={curPage==pages}><FaArrowRight/></button>
+                <button className="btn btn-nav" onClick={(e)=>this.execQuery(curPage+1,e)} disabled={curPage===pages}><FaArrowRight/></button>
               </div>
             </Col>
           </Row>
