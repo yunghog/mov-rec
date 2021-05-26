@@ -762,3 +762,61 @@ padding: 10px;
   margin: 10px;
   border-radius: 10px;
 }
+/* contact form */
+.form-control-contact{
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 10px 10px 20px #5553;
+  overflow: hidden;
+  background-color: var(--manatee2);
+  padding: 10px;
+  background: linear-gradient(45deg, var(--imperial-red2) -50%, var(--manatee2) 120%);
+}
+.form-control-contact h2{
+  background: linear-gradient(45deg, var(--space-cadet) -50%, var(--manatee) 120%);
+  margin: -10px;
+  padding: 20px 10px;
+  color: var(--text2);
+}
+.form-control-contact .form-element{
+  padding-top: 20px;
+  position: relative;
+  margin-top: 10px;
+}
+.form-control-contact .form-element label{
+  position: absolute;
+  top: 0px;
+  font-weight: bold;
+  color: var(--manatee);
+  font-size: 14px;
+}
+.form-control-contact .form-element input,textarea{
+  padding: 10px;
+  border: 2px solid var(--manatee2);
+  width: 100%;
+  border-radius: 10px;
+  outline: none !important;
+  padding-left: 40px;
+  transition: .5s;
+}
+.form-control-contact .form-element span{
+  position: absolute;
+  left: 0px;
+  background-color: var(--manatee2);
+  font-size: 26px;
+  padding: 5px;
+  border-radius: 10px 0px 0px 10px;
+  color: var(--manatee);
+}
+.form-control-contact .form-element input:focus,textarea:focus{
+  border: 2px solid var(--manatee);
+
+}
+.form-control-contact .form-element textarea{
+  padding-left: 10px;
+}
+.card{
+  border-radius: 10px;
+  box-shadow: 10px 10px 20px #5553;
+  overflow: hidden;
+}
