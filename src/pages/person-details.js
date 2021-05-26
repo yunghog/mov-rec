@@ -5,6 +5,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import '../assets/css/style.css'
 import CardsArray from  '../components/cards-array'
 import {FaInstagram,FaTwitter} from 'react-icons/fa'
+import {Keys} from  '../components/api-key'
+
 class PersonDetails extends React.Component{
   constructor(props){
     super(props)
@@ -24,7 +26,7 @@ class PersonDetails extends React.Component{
     this.getSocials(this.props.match.params.peopleId)
   }
   getPeople = (id) =>{
-    let url = "https://api.themoviedb.org/3/person/"+id+"?api_key=e0027d57cef3fdd5caa5a8e762c30c62&language=en-US".replace(" ","");
+    let url = "https://api.themoviedb.org/3/person/"+id+"?api_key="+Keys+"&language=en-US".replace(" ","");
     Axios.get(url).then(res=>{
       this.setState({
         people: res.data,
@@ -32,7 +34,7 @@ class PersonDetails extends React.Component{
     })
   }
   getCredits = (id) =>{
-    let url = "https://api.themoviedb.org/3/person/"+id+"/combined_credits?api_key=e0027d57cef3fdd5caa5a8e762c30c62&language=en-US".replace(" ","");
+    let url = "https://api.themoviedb.org/3/person/"+id+"/combined_credits?api_key="+Keys+"&language=en-US".replace(" ","");
     Axios.get(url).then(res=>{
       this.setState({
         featured: res.data.cast
@@ -40,7 +42,7 @@ class PersonDetails extends React.Component{
     })
   }
   getSocials= (id) =>{
-    let url = "https://api.themoviedb.org/3/person/"+id+"/external_ids?api_key=e0027d57cef3fdd5caa5a8e762c30c62&language=en-US".replace(" ","");
+    let url = "https://api.themoviedb.org/3/person/"+id+"/external_ids?api_key="+Keys+"&language=en-US".replace(" ","");
     Axios.get(url).then(res=>{
       this.setState({
         externalIds: res.data
@@ -51,8 +53,6 @@ class PersonDetails extends React.Component{
     const person = this.state.people;
     const featured = this.state.featured;
     const ids = this.state.externalIds;
-    console.log(ids);
-    console.log(featured[0]);
     return(
       <div>
         <Container fluid>

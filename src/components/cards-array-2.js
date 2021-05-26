@@ -25,8 +25,8 @@ class CardsArray2 extends React.Component{
               {list && list.map(item=>
                 <a href={"#/people/"+item.id}>
                   <div className="movie-cast" key={item.id}>
-                    {item.profile_path!=null && <img src={"https://image.tmdb.org/t/p/w500"+item.profile_path} />}
-                    {item.profile_path==null && <img src={defaultDp}/>}
+                    {item.profile_path!=null && <img src={"https://image.tmdb.org/t/p/w500"+item.profile_path} alt={item.name}/>}
+                    {item.profile_path==null && <img src={defaultDp} alt={item.name}/>}
                     <p>{item.name}</p>
                     <p className="char-name">{item.character}</p>
                 </div>

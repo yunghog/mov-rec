@@ -5,6 +5,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import '../assets/css/style.css'
 import {FaArrowLeft,FaArrowRight} from 'react-icons/fa'
 import SearchCon from  '../components/search-con'
+import {Keys} from  '../components/api-key'
+
 class SearchResults extends React.Component{
   constructor(props){
     super(props)
@@ -30,8 +32,7 @@ class SearchResults extends React.Component{
       currentPage: page
     })
     const q = this.state.query.replace(" ","%20");
-    const url = "https://api.themoviedb.org/3/search/multi?api_key=e0027d57cef3fdd5caa5a8e762c30c62&language=en-US&query="+q+"&page="+page+"&include_adult=true".replaceAll(' ','')
-    console.log(url);
+    const url = "https://api.themoviedb.org/3/search/multi?api_key="+Keys+"&language=en-US&query="+q+"&page="+page+"&include_adult=true".replaceAll(' ','')
     Axios.get(url).then(res=>{
       this.setState({
         searchResult: res.data
@@ -43,7 +44,6 @@ class SearchResults extends React.Component{
     const pages = this.state.searchResult.total_pages
     const curPage = this.state.currentPage
     const results = this.state.searchResult.results
-    console.log(results);
     return(
       <div>
         <Container fluid>

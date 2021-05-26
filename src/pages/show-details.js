@@ -8,6 +8,7 @@ import VideoArray from  '../components/video-array'
 import CardsArray2 from  '../components/cards-array-2'
 import {FaLink} from 'react-icons/fa'
 import defaultBackdrop  from  '../assets/images/default-backdrop.jpg'
+import {Keys} from  '../components/api-key'
 
 class ShowDetails extends React.Component{
   constructor(props){
@@ -31,7 +32,7 @@ class ShowDetails extends React.Component{
     this.getVideos(this.props.match.params.showId);
   }
   getMovieDetails = (id) =>{
-    let url = "https://api.themoviedb.org/3/tv/"+id+"?api_key=e0027d57cef3fdd5caa5a8e762c30c62&language=en-US".replaceAll(" ","");
+    let url = "https://api.themoviedb.org/3/tv/"+id+"?api_key="+Keys+"&language=en-US".replaceAll(" ","");
     Axios.get(url).then(res=>{
       this.setState({
         thisMovie: res.data
@@ -39,7 +40,7 @@ class ShowDetails extends React.Component{
     })
   }
   getCredits = (id) =>{
-    let url = "https://api.themoviedb.org/3/tv/"+id+"/credits?api_key=e0027d57cef3fdd5caa5a8e762c30c62&language=en-US".replace(" ","");
+    let url = "https://api.themoviedb.org/3/tv/"+id+"/credits?api_key="+Keys+"&language=en-US".replace(" ","");
     Axios.get(url).then(res=>{
       this.setState({
         cast: res.data
@@ -47,7 +48,7 @@ class ShowDetails extends React.Component{
     })
   }
   getSimilarMovies = (id) =>{
-    let url = "https://api.themoviedb.org/3/tv/"+id+"/similar?api_key=e0027d57cef3fdd5caa5a8e762c30c62&language=en-US&page=1".replace(" ","");
+    let url = "https://api.themoviedb.org/3/tv/"+id+"/similar?api_key="+Keys+"&language=en-US&page=1".replace(" ","");
     Axios.get(url).then(res=>{
       this.setState({
         similarMovies: res.data.results,
@@ -55,7 +56,7 @@ class ShowDetails extends React.Component{
     })
   }
   getVideos = (id) =>{
-    let url = "https://api.themoviedb.org/3/tv/"+id+"/videos?api_key=e0027d57cef3fdd5caa5a8e762c30c62&language=en-US&page=1".replace(" ","");
+    let url = "https://api.themoviedb.org/3/tv/"+id+"/videos?api_key="+Keys+"&language=en-US&page=1".replace(" ","");
     Axios.get(url).then(res=>{
       console.log(res.data);
       this.setState({
@@ -64,7 +65,7 @@ class ShowDetails extends React.Component{
     })
   }
   getReviews = (id) =>{
-    let url = "https://api.themoviedb.org/3/tv/"+id+"/reviews?api_key=e0027d57cef3fdd5caa5a8e762c30c62&language=en-US&page=1".replace(" ","");
+    let url = "https://api.themoviedb.org/3/tv/"+id+"/reviews?api_key="+Keys+"&language=en-US&page=1".replace(" ","");
     Axios.get(url).then(res=>{
       console.log(res.data);
       this.setState({

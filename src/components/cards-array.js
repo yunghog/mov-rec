@@ -12,7 +12,6 @@ class CardsArray extends React.Component{
   render(){
     const list = this.props.list;
     const media_type = this.props.type;
-    console.log(media_type);
     return(
       <Container className="cards-array-con">
         <Row>

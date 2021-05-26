@@ -3,7 +3,6 @@ import Axios from 'axios'
 import {Container, Row, Col} from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../assets/css/style.css'
-import AOS from  'aos'
 // components
 import SearchCon from  '../components/search-con'
 import CardsArray from  '../components/cards-array'
@@ -17,25 +16,26 @@ class Home extends React.Component{
       trendingMovies: [],
       trendingShows: [],
       latestMovies: [],
-      isLoading: false
+      isLoading: false,
+      key : process.env.REACT_APP_TMDB_API_KEY
     }
   }
   getTrendingMovies = () => {
-      Axios.get("https://api.themoviedb.org/3/trending/movie/week?api_key=e0027d57cef3fdd5caa5a8e762c30c62").then(res=>{
+      Axios.get("https://api.themoviedb.org/3/trending/movie/week?api_key="+this.state.key).then(res=>{
         this.setState({
           trendingMovies:res.data.results,
         })
       })
   }
   getTrendingShows = () => {
-      Axios.get("https://api.themoviedb.org/3/trending/tv/week?api_key=e0027d57cef3fdd5caa5a8e762c30c62").then(res=>{
+      Axios.get("https://api.themoviedb.org/3/trending/tv/week?api_key="+this.state.key).then(res=>{
         this.setState({
           trendingShows:res.data.results
         })
       })
   }
   getLatestMovies = () => {
-      Axios.get("https://api.themoviedb.org/3/movie/popular?api_key=e0027d57cef3fdd5caa5a8e762c30c62&language=en-US&page=1").then(res=>{
+      Axios.get("https://api.themoviedb.org/3/movie/popular?api_key="+this.state.key+"&language=en-US&page=1").then(res=>{
         this.setState({
           latestMovies:res.data.results
         })
@@ -47,11 +47,6 @@ class Home extends React.Component{
     })
   }
   componentDidMount(){
-    AOS.init({
-      offset: 10,
-      duration: 2000,
-      once: true
-    });
     this.setState({
       isLoading: true
     })
