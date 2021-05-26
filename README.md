@@ -1,2 +1,3 @@
-# App to discover movies and shows
-## Work in progress
+# TrapTV
+## App to discover movies and shows
+### Powered by TMDB
