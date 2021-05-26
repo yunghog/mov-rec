@@ -9,7 +9,7 @@ function About(){
         <Row noGutters>
           <Col>
             <div className="hero-img">
-              <img className="" src={Hero} />
+              <img className="" src={Hero} alt="TrapTV"/>
               <h2>TrapTV</h2>
             </div>
           </Col>
@@ -30,7 +30,7 @@ function About(){
                 flexibility and control to customize your home screen with your own card categories.
               </p>
               <br/>
-            <p className="traptv-logo tmdb-logo2"><img className="" src={logo}/></p>
+            <p className="traptv-logo tmdb-logo2"><img className="" src={logo} alt="TrapTV"/></p>
             <div className="fancy-highlight fancy-highlight2">
               <ul>
                 <li>Explore huge amount of categories: On TV, Trending movie reviews, Anticipated movie trailers,
@@ -45,7 +45,7 @@ function About(){
                 <li>Get personal movie recommendation based on your taste</li>
               </ul>
               <div className="">
-                <a className="tmdb-link2" href="https://github.com/yunghog/mov-rec" target="_blank" rel="noopner">View Source</a>
+                <a className="tmdb-link2" href="https://github.com/yunghog/mov-rec" target="_blank" rel="noreferrer">View Source</a>
               </div>
             </div>
           </div>
@@ -65,7 +65,7 @@ function About(){
                    and that's precisely what makes us different.
                 </p>
                 <br/>
-                <p className="tmdb-logo"><img className="" src="https://www.themoviedb.org/assets/2/v4/logos/v2/blue_short-8e7b30f73a4020692ccca9c88bafe5dcb6f8a62a4c6bc55cd9ba82bb2cd95f6c.svg"/></p>
+                <p className="tmdb-logo"><img className="" src="https://www.themoviedb.org/assets/2/v4/logos/v2/blue_short-8e7b30f73a4020692ccca9c88bafe5dcb6f8a62a4c6bc55cd9ba82bb2cd95f6c.svg" alt="TrapTV"/></p>
                 <div className="fancy-highlight">
                   <ul>
                   <li>Every year since 2008, the number of contributions to our database has increased. With over 400,000 developers and companies using our platform, TMDb has become a premiere source for metadata.</li>
@@ -75,8 +75,8 @@ function About(){
                   <li>Trusted platform. Every single day our service is used by millions of people while we process over 3 billion requests. We've proven for years that this is a service that can be trusted and relied on.</li>
                   </ul>
                   <div className="">
-                    <a className="tmdb-link" href="https://www.themoviedb.org/about" target="_blank" rel="noopner">Home page</a>
-                    <a  className="tmdb-link" href="https://developers.themoviedb.org/3" target="_blank" rel="noopner">API Documentation</a>
+                    <a className="tmdb-link" href="https://www.themoviedb.org/about" target="_blank" rel="noreferrer">Home page</a>
+                    <a  className="tmdb-link" href="https://developers.themoviedb.org/3" target="_blank" rel="noreferrer">API Documentation</a>
                   </div>
                 </div>
               </div>
@@ -90,17 +90,17 @@ function About(){
             <div className="boxy">
               <Row noGutters>
                 <Col md={3} className="">
-                  <img src="https://avatars.githubusercontent.com/u/41548444?v=4" className="" width="100%"/>
+                  <img src="https://avatars.githubusercontent.com/u/41548444?v=4" className="" width="100%" alt="TrapTV"/>
                 </Col>
                 <Col md={9}>
                   <div className="det  p-3">
                     <h4>About the developer</h4>
-                    <p>Hey, Im <a>Samartha</a>. Im a developer and graphic designer based in Sagar,India </p>
+                    <p>Hey, Im Samartha. Im a developer and graphic designer based in Sagar,India </p>
                     <p className="socials">
-                      <a><FaLinkedin/></a>
-                      <a><FaInstagram/></a>
-                      <a><FaEnvelope/></a>
-                      <a><FaGithub/></a>
+                      <a href="https://www.linkedin.com/in/samartha-hm-7398861a1/" target="_blank" rel="noreferrer"><FaLinkedin/></a>
+                      <a href="https://instagram.com/samartha__" target="_blank" rel="noreferrer"><FaInstagram/></a>
+                      <a href="mailto:samarthaog@gmail.com" target="_blank" rel="noreferrer"><FaEnvelope/></a>
+                      <a href="https://github.com/yunghog" target="_blank" rel="noreferrer"><FaGithub/></a>
                     </p>
                   </div>
                 </Col>
