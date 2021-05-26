@@ -28,7 +28,7 @@ class Header extends React.Component{
   }
   isHome=()=>{
     const loc = window.location.hash
-    if(loc=="#/")
+    if(loc==="#/")
       return true
     return false
   }
@@ -60,13 +60,13 @@ class Header extends React.Component{
       }
   }
   toggleTheme=(x)=>{
-    if(x=='d'){
+    if(x==='d'){
       this.setState({
         curTheme: 0
       })
       document.body.setAttribute('data-theme','dark')
     }
-    if(x=='l'){
+    if(x==='l'){
       this.setState({
         curTheme: 1
       })
@@ -97,7 +97,7 @@ class Header extends React.Component{
               </Col>
               <Col xs={8} className="text-center">
                 <div className="header-logo">
-                  <img src={logo}/>
+                  <img src={logo} alt="TrapTV"/>
                 </div>
               </Col>
               <Col xs={2} className="text-right">
@@ -105,7 +105,7 @@ class Header extends React.Component{
               </Col>
             </Row>
           </Container>
-          <div  className={this.state.menuIsOpen==true ? "header-menu-con show" : "header-menu-con hide"}>
+          <div  className={this.state.menuIsOpen===true ? "header-menu-con show" : "header-menu-con hide"}>
             <div className="header-menu">
               <button className="btn btn-close" onClick={this.toggleMenu}>X</button>
               <li>
@@ -120,8 +120,8 @@ class Header extends React.Component{
               <li>
                 <a href="/#/thetmdb" onClick={this.toggleMenu}>Switch Theme</a>
                 <br/>
-                <button  class={this.state.curTheme==0?"btn-ts n":"btn-ts"} onClick={(e)=>{this.toggleTheme("d")}}><FaMoon/></button>
-                <button  class={this.state.curTheme==1?"btn-ts n":"btn-ts"} onClick={(e)=>{this.toggleTheme("l")}}><FaSun/></button>
+                <button  className={this.state.curTheme===0?"btn-ts n":"btn-ts"} onClick={(e)=>{this.toggleTheme("d")}}><FaMoon/></button>
+                <button  className={this.state.curTheme===1?"btn-ts n":"btn-ts"} onClick={(e)=>{this.toggleTheme("l")}}><FaSun/></button>
               </li>
               <li style={{textAlign:'center'}}>
                 <button className="btn btn-1 btn-share" onClick={this.toggleShare}>Share <FaShare/> </button>

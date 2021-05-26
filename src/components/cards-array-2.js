@@ -23,8 +23,8 @@ class CardsArray2 extends React.Component{
           <Col>
             <div className="movie-thumb-con">
               {list && list.map(item=>
-                <a href={"#/people/"+item.id}>
-                  <div className="movie-cast" key={item.id}>
+                <a href={"#/people/"+item.id}  key={item.id}>
+                  <div className="movie-cast">
                     {item.profile_path!=null && <img src={"https://image.tmdb.org/t/p/w500"+item.profile_path} alt={item.name}/>}
                     {item.profile_path==null && <img src={defaultDp} alt={item.name}/>}
                     <p>{item.name}</p>

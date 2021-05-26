@@ -1,6 +1,4 @@
 import React from 'react'
-import Axios from 'axios'
-import {Container, Row, Col} from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../assets/css/style.css'
 import { FaSearch } from "react-icons/fa";

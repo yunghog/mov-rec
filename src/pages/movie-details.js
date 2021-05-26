@@ -72,7 +72,7 @@ class MovieDetails extends React.Component{
     })
   }
   componentDidUpdate(){
-    if(this.state.movieId != this.props.match.params.movieId){
+    if(this.state.movieId !== this.props.match.params.movieId){
       window.location.reload();
     }
   }
@@ -91,8 +91,8 @@ class MovieDetails extends React.Component{
                   <h2>{movie.title}</h2>
                 </div>
                 <div className="movie-backdrop-image">
-                  {movie.backdrop_path && <img  src={"https://image.tmdb.org/t/p/original"+movie.backdrop_path}/>}
-                  {movie.backdrop_path==null && <img src={defaultBackdrop} /> }
+                  {movie.backdrop_path && <img  src={"https://image.tmdb.org/t/p/original"+movie.backdrop_path} alt="TrapTV"/>}
+                  {movie.backdrop_path==null && <img src={defaultBackdrop} alt="TrapTV"/> }
                 </div>
               </div>
             </Col>
@@ -107,7 +107,7 @@ class MovieDetails extends React.Component{
                 {movie.tagline && <h5>{movie.tagline}</h5>}
                 <div style={{width:'100%', overflow:'hidden'}}>
                   {movie.genres && movie.genres.map(i=>
-                    <a className="genre"  key={i.id}>{i.name}</a>
+                    <span className="genre"  key={i.id} >{i.name}</span>
                   )}
                 </div>
                 <p>{movie.overview}</p>
@@ -115,17 +115,17 @@ class MovieDetails extends React.Component{
                     <li>Release : {movie.release_date}</li>
                     <li>TMDB Rating : {movie.vote_average}</li>
                     {movie.production_companies && <li>Production : { movie.production_companies.map(comp=>
-                        <li key={comp.id}>{comp.name},</li>
+                        <span key={comp.id}>{comp.name},</span>
                       )}</li>}
                     <li style={{textTransform:"uppercase"}}>Language : {movie.original_language}</li>
                     {movie.budget>0 && <li>Budget : ${movie.budget/100}</li> }
-                    {movie.homepage && <li><a href={movie.homepage} target="_blank"><FaLink/> Visit homepage</a></li>}
+                    {movie.homepage && <li><a href={movie.homepage} target="_blank" rel="noreferrer"><FaLink/> Visit homepage</a></li>}
                   </div>
               </div>
             </Col>
             <Col md={3}>
               <div className="movie-poster">
-                <img src={"https://image.tmdb.org/t/p/original"+movie.poster_path}/>
+                <img src={"https://image.tmdb.org/t/p/original"+movie.poster_path} alt="TrapTV"/>
               </div>
             </Col>
           </Row>

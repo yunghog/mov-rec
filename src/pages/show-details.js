@@ -58,7 +58,6 @@ class ShowDetails extends React.Component{
   getVideos = (id) =>{
     let url = "https://api.themoviedb.org/3/tv/"+id+"/videos?api_key="+Keys+"&language=en-US&page=1".replace(" ","");
     Axios.get(url).then(res=>{
-      console.log(res.data);
       this.setState({
         videos: res.data,
       })
@@ -67,7 +66,6 @@ class ShowDetails extends React.Component{
   getReviews = (id) =>{
     let url = "https://api.themoviedb.org/3/tv/"+id+"/reviews?api_key="+Keys+"&language=en-US&page=1".replace(" ","");
     Axios.get(url).then(res=>{
-      console.log(res.data);
       this.setState({
         reviews: res.data,
       })
@@ -110,22 +108,22 @@ class ShowDetails extends React.Component{
                 {movie.name && <h1>{movie.name}</h1>}
                 {movie.tagline && <h5>{movie.tagline}</h5>}
                 {movie.genres && movie.genres.map(i=>
-                  <a className="genre" href="#"  key={i.id}>{i.name}</a>
+                  <span className="genre" key={i.id}>{i.name}</span>
                 )}
                 <p>{movie.overview}</p>
                   <div className="highlight1">
                     {movie.release_date && <li>Release : {movie.release_date}</li>}
                     <li>TMDB Rating : {movie.vote_average}</li>
                     {movie.production_companies && <li>Production : { movie.production_companies.map(comp=>
-                        <li key={comp.id}>{comp.name},</li>
+                        <span key={comp.id}>{comp.name},</span>
                       )}</li>}
                     <li style={{textTransform:"uppercase"}}>Language : {movie.original_language}</li>
                     {movie.budget>0 && <li>Budget : ${movie.budget/100}</li> }
                     {movie.created_by &&
                       <li>
-                        Created by :
+                        Created by : 
                         {movie.created_by.map(c=>
-                          <li key={c.id}>{c.name},</li>
+                          <span key={c.id}>{c.name},</span>
                         )
                         }
                       </li>
