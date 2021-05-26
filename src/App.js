@@ -1,4 +1,4 @@
-import {HashRouter as Router, Route, Switch} from 'react-router-dom'
+import {HashRouter as Router, Route} from 'react-router-dom'
 import Header from './components/header.js'
 import Footer from './components/footer.js'
 import Home from  './pages/home'
