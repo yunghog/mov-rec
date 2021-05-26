@@ -3,7 +3,7 @@ import {Container,Col,Row} from 'react-bootstrap'
 import Hero from '../assets/images/hero1.jpg'
 import Axios from 'axios'
 import logo from  '../assets/images/traptv-logo.png'
-import {FaInstagram, FaGithub, FaLinkedin, FaEnvelope, FaUser, FaQuestion, } from 'react-icons/fa'
+import {FaInstagram, FaGithub, FaLinkedin, FaEnvelope, FaUser, FaQuestion, FaGlobe} from 'react-icons/fa'
 import {FirebaseUrl} from '../components/api-key'
 class About extends React.Component{
   constructor(props){
@@ -20,7 +20,7 @@ class About extends React.Component{
     console.log(this.state);
   }
   postMail = () =>{
-    const url = FirebaseUrl+"emails.json"
+    const url = FirebaseUrl+"/emails.json"
     const data = JSON.stringify({
       "name": this.state.name,
       "email": this.state.email,
@@ -155,8 +155,8 @@ class About extends React.Component{
                 </div>
               </Col>
               <Col md="4">
-                <div className="card det mx-3 my-0">
-                  <img src="https://avatars.githubusercontent.com/u/41548444?v=4" className="" width="100%" alt="TrapTV"/>
+                <div className="card det card-dev">
+                  <img src="https://avatars.githubusercontent.com/u/41548444?v=4" className="avatar" width="100%" alt="TrapTV"/>
                   <div className="card-body">
                     <h4>About the developer</h4>
                     <p>Hey, Im Samartha. Im a developer and graphic designer based in Sagar,India </p>
@@ -165,6 +165,7 @@ class About extends React.Component{
                       <a href="https://instagram.com/samartha__" target="_blank" rel="noreferrer"><FaInstagram/></a>
                       <a href="mailto:samarthaog@gmail.com" target="_blank" rel="noreferrer"><FaEnvelope/></a>
                       <a href="https://github.com/yunghog" target="_blank" rel="noreferrer"><FaGithub/></a>
+                      <a href="https://yunghog.github.io" target="_blank" rel="noreferrer"><FaGlobe/></a>
                     </p>
                   </div>
                 </div>
