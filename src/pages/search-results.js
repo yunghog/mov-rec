@@ -32,7 +32,7 @@ class SearchResults extends React.Component{
       currentPage: page
     })
     const q = this.state.query.replace(" ","%20");
-    const url = "https://api.themoviedb.org/3/search/multi?api_key="+Keys+"&language=en-US&query="+q+"&page="+page+"&include_adult=true".replaceAll(' ','')
+    const url = "https://api.themoviedb.org/3/search/multi?api_key="+Keys+"&language=en-US&query="+q+"&page="+page+"&include_adult=false".replaceAll(' ','')
     Axios.get(url).then(res=>{
       this.setState({
         searchResult: res.data
